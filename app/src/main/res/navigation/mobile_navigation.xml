@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_users">
+
+    <fragment
+        android:id="@+id/navigation_users"
+        android:name="com.example.android.car_locator.ui.users.UsersFragment"
+        android:label="@string/title_users"
+        tools:layout="@layout/fragment_users">
+        <action
+            android:id="@+id/action_navigation_users_to_maps"
+            app:destination="@id/navigation_maps" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_maps"
+        android:name="com.example.android.car_locator.ui.map.MapsFragment"
+        tools:layout="@layout/fragment_maps">
+        <action
+            android:id="@+id/action_navigation_maps_to_users"
+            app:destination="@id/navigation_users" />
+    </fragment>
+
+</navigation>
